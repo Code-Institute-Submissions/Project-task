@@ -14,9 +14,9 @@ body{
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
     display: flex;
-    align-itmes:center;
+    align-items:center;
     justify-content: center;
-    min-heigh: 100 vh;
+    min-height: 100 vh;
 }
 
 .container{
@@ -31,7 +31,7 @@ body{
 
 h2{
     text-align: center;
-    margin 0 0 20px;
+    margin: 0 0 20px;
 }  
 
 .form-section{
@@ -81,13 +81,15 @@ position: relative;
     visibility: visible;
   }
 
-
-
-}
-
-.formSection error {color: hsl(4, 58%, 56%);
-}
-
-.formSection success {color: hsl(140, 77%, 33%);
-}
-
+  .form button {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
