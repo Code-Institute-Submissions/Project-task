@@ -3,11 +3,6 @@ const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
 
-
-
-
-changebackgroundcolor();
-
 function showError(input, message) {
     const formSection = input.parentElement;
     formSection.className = 'form-section error';
@@ -21,25 +16,33 @@ function showSuccess(input) {
     formSection.className = 'form-section success';
   }
 
+// inputtaask
+
+
 // Event Listeners
 
-form.addEventListener('submit', function(e) {
-     e.preventDefault();
-if (inputTask.value === ''){
-    showError(task,  'task is required');
-}else {
-    showSuccess(task);
-}
 
-if (inputTasktype.value === ''){
-    showError(task-type,  'task type is required');
+inputTask.addEventListener("blur", function(e) {
+    if (inputTask.value === ''){
+    showError(inputTask,  'task is required');
 }else {
-    showSuccess(task-type);
-}
-
-if (inputDate.value === ''){
-    showError(target-date,  'target date is required');
-}else {
-    showSuccess(target-date);
+    showSuccess(inputTask);
 }
  });
+
+inputTasktype.addEventListener("blur", function(e) {
+    if (inputTasktype.value === ''){
+    showError(inputTasktype,  'type is required');
+}else {
+    showSuccess(inputTasktype);
+}
+ });
+
+inputDate.addEventListener("blur", function(e) {
+    if (inputDate.value === ''){
+    showError(inputDate,  'date is required');
+}else {
+    showSuccess(inputDate);
+}
+ });
+

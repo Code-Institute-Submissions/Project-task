@@ -77,7 +77,7 @@ position: relative;
     visibility: hidden;
   }
   
-  .formSection.error small {
+  .form-section.error small {
     visibility: visible;
   }
 
