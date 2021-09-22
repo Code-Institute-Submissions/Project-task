@@ -4,15 +4,13 @@ const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
 
 
-function changebackgroundcolor(){
-    formSection.className = ''
-}
+
 
 changebackgroundcolor();
 
 function showError(input, message) {
     const formSection = input.parentElement;
-    formSection.className = 'formSection.error input';
+    formSection.className = 'form-section error';
     const small = formSection.querySelector('small');
     small.innerText = message;
  }   
@@ -20,7 +18,7 @@ function showError(input, message) {
   // Show success outline
 function showSuccess(input) {
     const formSection = input.parentElement;
-    formSection.className = 'formSection.success input';
+    formSection.className = 'form-section success';
   }
 
 // Event Listeners
