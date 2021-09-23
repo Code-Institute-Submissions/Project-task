@@ -2,6 +2,22 @@ const form = document.getElementById('form');
 const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
+const success = document.getElementById('tick');
+const fail = document.getElementById('cross');
+
+console.log(success);
+console.log(success.innerHTML);
+
+// const isuccess = success.innerHTML;
+// const element = document.createElement(span);
+// const e = document.createElement('i'); 
+// e.innerHTML = 'fa fa-tick';
+// document.body.appendChild(e);
+// var textnode = document.createTextNode('fa fa-tick'); 
+// e.appendChild(textnode);
+
+
+
 
 function showError(input, message) {
     const formSection = input.parentElement;
@@ -25,6 +41,7 @@ function showSuccess(input) {
 inputTask.addEventListener("blur", function(e) {
     if (inputTask.value === ''){
     showError(inputTask,  'task is required');
+
 }else {
     showSuccess(inputTask);
 }
@@ -45,4 +62,6 @@ inputDate.addEventListener("blur", function(e) {
     showSuccess(inputDate);
 }
  });
+
+//change the fa fa icon dependent on success or failure
 
