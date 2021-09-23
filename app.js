@@ -2,11 +2,11 @@ const form = document.getElementById('form');
 const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
-const success = document.getElementById('tick');
-const fail = document.getElementById('cross');
+const formSection = document.querySelector('.form-selection');
+const span = document.getElementById('fa');
 
-console.log(success);
-console.log(success.innerHTML);
+
+
 
 // const isuccess = success.innerHTML;
 // const element = document.createElement(span);
@@ -63,5 +63,23 @@ inputDate.addEventListener("blur", function(e) {
 }
  });
 
+//  function myFunction(){
+//      const tick = document.createElement('i');
+//      var 
+//  formSection.append(tick);
+//  tick.classList.add("fa","fa-hand-rock-o");
+//  }
+
+//  myFunction();
+
+var addCheck = document.createElement('i');
+addCheck.classList.add("fas","fa-check");
+console.log(addCheck);
+document.body.appendChild(addCheck);
+
+
 //change the fa fa icon dependent on success or failure
+
+// <i class="fas fa-check"></i></span>
+//<i class="fas fa-times"></i></span>
 
