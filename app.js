@@ -3,8 +3,9 @@ const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
 const formSection = document.querySelector('.form-selection');
-const span = document.getElementById('fa');
+const span = document.getElementsByClassName('.fas fa-check');
 
+console.log(span);
 
 
 
@@ -24,6 +25,7 @@ function showError(input, message) {
     formSection.className = 'form-section error';
     const small = formSection.querySelector('small');
     small.innerText = message;
+
  }   
 
   // Show success outline
@@ -70,16 +72,20 @@ inputDate.addEventListener("blur", function(e) {
 //  tick.classList.add("fa","fa-hand-rock-o");
 //  }
 
-//  myFunction();
+// function myFunction(){
 
-var addCheck = document.createElement('i');
-addCheck.classList.add("fas","fa-check");
-console.log(addCheck);
-document.body.appendChild(addCheck);
+// var addCheck = document.createElement('i');
+// addCheck.classList.add("fas","fa-check");
+// console.log(addCheck);
 
+// document.form-selection.appendChild(addCheck);
+// }
 
+//myFunction();
+// var node = document.createElement("LI");
+//   var textnode = document.createTextNode("Water");
+//   node.appendChild(textnode);
+//   document.getElementById("myList").appendChild(node);
 //change the fa fa icon dependent on success or failure
 
-// <i class="fas fa-check"></i></span>
-//<i class="fas fa-times"></i></span>
 
