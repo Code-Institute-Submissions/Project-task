@@ -1,7 +1,6 @@
 
 
 
-// const form = document.getElementById('form');
 const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
@@ -9,8 +8,9 @@ const taskList = document.querySelector('.task-list')
 const tasklistdata = [];
 const taskButton = document.getElementById('myBtn');
 const cleartasks = document.getElementById('clear-tasks')
-// const formSection = document.querySelector('.form-selection');
+const checkbox = document.getElementById('checkbox')
 
+console.log(checkbox);
 // function to add tasks to local storage
 function addToLocalStorage(tasklistdata) {
   // conver the array to string then store it.
@@ -63,38 +63,6 @@ inputDate.addEventListener("blur", function(e) {
  });
 
 
-// //Add task
-
-// document.getElementById("myBtn").addEventListener('click', addTask); 
-
-// function addTask(e){
-       
-//     if(inputTask.value === ''){
-//         //improve alert message by using Sweet alert framework
-//         swal("Whoops" ,  "Please add a task!" ,  "error" );
-//     } else if (inputDate.value === ''){
-//         alert('Add a date');
-//     }
-//     e.preventDefault(); 
-//          //create li element
-//     const li = document.createElement('li')
-
-//     var node = document.createElement("li");                 // Create a <li> node
-//     var textnode = document.createTextNode(inputTask.value);         // Create a text node
-//     node.appendChild(textnode);                              // Append the text to <li>
-//     document.getElementById('task-list').appendChild(node);     // Append <li> to <ul> with id="myList"
-//     inputTask.value = '';
-
-// //    e.preventDefault();
-// //    console.log(li);
-// }
-
-// window.onload = loadTasks;
-
-// function loadTasks() {
-//   // Get the tasks from localStorage and convert it to an array
-//   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-// }
 
 
 
@@ -133,7 +101,7 @@ else {swal("Whoops" ,  "Please complete all fields in the form!" ,  "error" );
 }
 }
 
-// function to render given todos to screen
+// function to render given tasks to screen
 function rendertasklist(tasklistdata) {
   // clear everything inside <ul> with class=todo-items
   taskList.innerHTML = '';
@@ -141,26 +109,12 @@ function rendertasklist(tasklistdata) {
   // run through each item inside tasklist
   tasklistdata.forEach(function(item, tasktype, target) {
     // check if the item is completed
-    const checked = item.completed ? 'checked': null;
+    //const checked = item.completed ? 'checked': null;
     // make a <li> element and fill it
     // <li> </li>
     const li = document.createElement('li');
-    // <li class="item"> </li>
-    li.setAttribute('class', 'item');
-    // <li class="item" data-key="20200708"> </li>
-    li.setAttribute('data-key', item.id);
-    /* <li class="item" data-key="20200708"> 
-          <input type="checkbox" class="checkbox">
-          Go to Gym
-          <button class="delete-button">X</button>
-        </li> */
-    // if item is completed, then add a class to <li> called 'checked', which will add line-through style
-    if (item.completed === true) {
-      li.classList.add('checked');
-    }
-
+  
     li.innerHTML = `
-      <input type="checkbox" class="checkbox" ${checked}>
       ${item.name},
       ${item.type},
       ${item.date}
@@ -169,9 +123,9 @@ function rendertasklist(tasklistdata) {
     // finally add the <li> to the <ul>
     taskList.append(li);
   });
-
 }
 
+//remove tasks
 taskList.addEventListener('click', removeTask);
 
 //clear all tasks
@@ -192,4 +146,17 @@ function clearTasks(){
   taskList.innerHTML = '';
 }
 }
+
+function completeTask(){
+  console.log('Hello');
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'li') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
 
