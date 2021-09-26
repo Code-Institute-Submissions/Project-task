@@ -114,17 +114,31 @@ position: relative;
     margin-right: 10px;
   }
 
-  .delete-button {
-    float: right;
-    background-color: #dc143c;
-    border: none;
-    outline: none;
-    border-radius: 7px;
-    padding: 2px 5px;
-    margin-left: 10px;
-    font-size: 1.1rem;
-    font-weight: 550;
+  h5{
+      text-align: center;
+      margin: 0 0 20px;
+    
   }
+    button {
+      cursor: pointer;
+      background-color: #3498db;
+      border: 2px solid #3498db;
+      border-radius: 4px;
+      color: #fff;
+      display: block;
+      font-size: 16px;
+      padding: 10px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button.delete-button{
+      float: right;
+      width: 20%;
+      
+    }
+  
+  
   
   
 
