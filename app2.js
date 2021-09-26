@@ -1,9 +1,36 @@
+
+// initially get everything from localStorage
+getFromLocalStorage();
+
+
 // const form = document.getElementById('form');
 const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
-// const taskList = document.querySelector('.task-list')
+const taskList = document.querySelector('.task-list')
+const tasklistdata = [];
+const taskButton = document.getElementById('myBtn');
 // const formSection = document.querySelector('.form-selection');
+
+// function to add tasks to local storage
+function addToLocalStorage(tasklistdata) {
+  // conver the array to string then store it.
+  localStorage.setItem('tasklist', JSON.stringify(tasklistdata));
+  // render them to screen
+  rendertasklist(tasklistdata);
+}
+
+// function helps to get everything from local storage
+function getFromLocalStorage() {
+  const reference = localStorage.getItem('tasklistdata');
+  // if reference exists
+  if (reference) {
+    // converts back to array and store it in todos array
+    taskList = JSON.parse(reference);
+    rendertasklist(tasklistdata);
+  }
+}
+
 
 // let tasks = [];
 
@@ -81,13 +108,12 @@ const inputDate = document.getElementById('target-date');
 // }
 
 
-const tasklist = [];
-const taskButton = document.getElementById('myBtn');
+
 // add an eventListener on form, and listen for submit event
 taskButton.addEventListener('click', function(e) {
   // prevent the page from reloading when submitting the form
   e.preventDefault();
-  addTask(inputTask.value, inputTasktype, inputDate.value);
+  addTask(inputTask.value, inputTasktype.value, inputDate.value);
    // call addTodo function with input box current value
 });
 
@@ -99,22 +125,61 @@ function addTask(item, tasktype, target) {
     const taskitem = {
       id: Date.now(),
       name: item,
-      date: target,
       type: tasktype,
+      date: target,
       completed: false
     };
     
 
     // then add it to todos array
-    tasklist.push(taskitem);
-    console.log(tasklist);
-    //rendertasklist(tasklist); // then renders them between <ul>
+    tasklistdata.push(taskitem);
+    addToLocalStorage(tasklistdata);
+ rendertasklist(tasklistdata); // then renders them between <ul>
 
    // finally clear the input box value
     inputTask.value = '';
     inputDate.value = '';
     inputTasktype.value = '';
   }
+}
+
+// function to render given todos to screen
+function rendertasklist(tasklistdata) {
+  // clear everything inside <ul> with class=todo-items
+  taskList.innerHTML = '';
+
+  // run through each item inside tasklist
+  tasklistdata.forEach(function(item, tasktype, target) {
+    // check if the item is completed
+    const checked = item.completed ? 'checked': null;
+    // make a <li> element and fill it
+    // <li> </li>
+    const li = document.createElement('li');
+    // <li class="item"> </li>
+    li.setAttribute('class', 'item');
+    // <li class="item" data-key="20200708"> </li>
+    li.setAttribute('data-key', item.id);
+    /* <li class="item" data-key="20200708"> 
+          <input type="checkbox" class="checkbox">
+          Go to Gym
+          <button class="delete-button">X</button>
+        </li> */
+    // if item is completed, then add a class to <li> called 'checked', which will add line-through style
+    if (item.completed === true) {
+      li.classList.add('checked');
+    }
+
+    li.innerHTML = `
+      <input type="checkbox" class="checkbox" ${checked}>
+      ${item.name},
+      ${item.type},
+      ${item.date}
+      <button class="delete-button">X</button>
+    `;
+    // finally add the <li> to the <ul>
+    taskList.append(li);
+  });
+
 }
 
     
