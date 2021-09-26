@@ -5,6 +5,10 @@ const inputDate = document.getElementById('target-date');
 const taskList = document.querySelector('.task-list')
 const formSection = document.querySelector('.form-selection');
 
+let tasks 
+
+let tasks = [];
+
 function showError(input, message) {
     const formSection = input.parentElement;
     formSection.className = 'form-section error';
@@ -71,3 +75,9 @@ function addTask(e){
 //    console.log(li);
 }
 
+window.onload = loadTasks;
+
+function loadTasks() {
+  // Get the tasks from localStorage and convert it to an array
+  let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
+}
