@@ -182,4 +182,13 @@ function rendertasklist(tasklistdata) {
 
 }
 
+taskList.addEventListener('click', removeTask);
     
+
+//remove task
+
+function removeTask(e){
+if (e.target.classList.contains('delete-button')){
+  e.target.parentElement.remove();
+}
+}

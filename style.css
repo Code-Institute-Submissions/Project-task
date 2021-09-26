@@ -114,6 +114,9 @@ position: relative;
     width: 100%;
   }
  
+  ul {
+    list-style-type: none; /* get rid of bullet points on side of list items */
+  }
 
   .checkbox {
     margin-right: 10px;
