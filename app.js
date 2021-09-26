@@ -2,17 +2,14 @@ const form = document.getElementById('form');
 const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
+const taskList = document.querySelector('.task-list')
 const formSection = document.querySelector('.form-selection');
-const addbutton = document.getElementById('add-button')
-console.log(addbutton);
 
 function showError(input, message) {
     const formSection = input.parentElement;
     formSection.className = 'form-section error';
     const small = formSection.querySelector('small');
     small.innerText = message;
-    document.getElementByClassName('.fas fa-check').classList.remove('.fas fa-check');
-
  }   
 
   // Show success outline
@@ -21,12 +18,7 @@ function showSuccess(input) {
     formSection.className = 'form-section success';
   }
 
-// inputtaask
-
-
 // Event Listeners
-
-
 inputTask.addEventListener("blur", function(e) {
     if (inputTask.value === ''){
     showError(inputTask,  'task is required');
@@ -52,58 +44,30 @@ inputDate.addEventListener("blur", function(e) {
 }
  });
 
-//Add tasks to the table
-
-//Loading listeners
-
-// loadEventListeners();
-
-// function loadEventListeners(){
-//     addbutton.addEventListener('click', addTask);
-// }
 
 //Add task
 
 document.getElementById("myBtn").addEventListener('click', addTask); 
 
 function addTask(e){
-        
+       
     if(inputTask.value === ''){
-        alert('Add a task');
+        //improve alert message by using Sweet alert framework
+        swal("Whoops" ,  "Please add a task!" ,  "error" );
     } else if (inputDate.value === ''){
         alert('Add a date');
-    } 
-    e.preventDefault();
+    }
+    e.preventDefault(); 
+         //create li element
+    const li = document.createElement('li')
+
+    var node = document.createElement("li");                 // Create a <li> node
+    var textnode = document.createTextNode(inputTask.value);         // Create a text node
+    node.appendChild(textnode);                              // Append the text to <li>
+    document.getElementById('task-list').appendChild(node);     // Append <li> to <ul> with id="myList"
+    inputTask.value = '';
+
+//    e.preventDefault();
+//    console.log(li);
 }
-
-
-
-
-
-// function Add a new task() {
-//     var li = document.createElement("li");
-//     var inputValue = document.getElementById("myInput").value;
-//     var t = document.createTextNode(inputValue);
-//     li.appendChild(t);
-//     if (inputValue === '') {
-//       alert("You must write something!");
-//     } else {
-//       document.getElementById("myUL").appendChild(li);
-//     }
-//     document.getElementById("myInput").value = "";
-  
-//     var span = document.createElement("SPAN");
-//     var txt = document.createTextNode("\u00D7");
-//     span.className = "close";
-//     span.appendChild(txt);
-//     li.appendChild(span);
-  
-//     for (i = 0; i < close.length; i++) {
-//       close[i].onclick = function() {
-//         var div = this.parentElement;
-//         div.style.display = "none";
-//       }
-//     }
-//   }
-  
 
