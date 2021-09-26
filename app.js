@@ -3,28 +3,15 @@ const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
 const formSection = document.querySelector('.form-selection');
-const span = document.getElementsByClassName('.fas fa-check');
-
-console.log(span);
-
-
-
-// const isuccess = success.innerHTML;
-// const element = document.createElement(span);
-// const e = document.createElement('i'); 
-// e.innerHTML = 'fa fa-tick';
-// document.body.appendChild(e);
-// var textnode = document.createTextNode('fa fa-tick'); 
-// e.appendChild(textnode);
-
-
-
+const addbutton = document.getElementById('add-button')
+console.log(addbutton);
 
 function showError(input, message) {
     const formSection = input.parentElement;
     formSection.className = 'form-section error';
     const small = formSection.querySelector('small');
     small.innerText = message;
+    document.getElementByClassName('.fas fa-check').classList.remove('.fas fa-check');
 
  }   
 
@@ -65,27 +52,58 @@ inputDate.addEventListener("blur", function(e) {
 }
  });
 
-//  function myFunction(){
-//      const tick = document.createElement('i');
-//      var 
-//  formSection.append(tick);
-//  tick.classList.add("fa","fa-hand-rock-o");
-//  }
+//Add tasks to the table
 
-// function myFunction(){
+//Loading listeners
 
-// var addCheck = document.createElement('i');
-// addCheck.classList.add("fas","fa-check");
-// console.log(addCheck);
+// loadEventListeners();
 
-// document.form-selection.appendChild(addCheck);
+// function loadEventListeners(){
+//     addbutton.addEventListener('click', addTask);
 // }
 
-//myFunction();
-// var node = document.createElement("LI");
-//   var textnode = document.createTextNode("Water");
-//   node.appendChild(textnode);
-//   document.getElementById("myList").appendChild(node);
-//change the fa fa icon dependent on success or failure
+//Add task
 
+document.getElementById("myBtn").addEventListener('click', addTask); 
+
+function addTask(e){
+        
+    if(inputTask.value === ''){
+        alert('Add a task');
+    } else if (inputDate.value === ''){
+        alert('Add a date');
+    } 
+    e.preventDefault();
+}
+
+
+
+
+
+// function Add a new task() {
+//     var li = document.createElement("li");
+//     var inputValue = document.getElementById("myInput").value;
+//     var t = document.createTextNode(inputValue);
+//     li.appendChild(t);
+//     if (inputValue === '') {
+//       alert("You must write something!");
+//     } else {
+//       document.getElementById("myUL").appendChild(li);
+//     }
+//     document.getElementById("myInput").value = "";
+  
+//     var span = document.createElement("SPAN");
+//     var txt = document.createTextNode("\u00D7");
+//     span.className = "close";
+//     span.appendChild(txt);
+//     li.appendChild(span);
+  
+//     for (i = 0; i < close.length; i++) {
+//       close[i].onclick = function() {
+//         var div = this.parentElement;
+//         div.style.display = "none";
+//       }
+//     }
+//   }
+  
 
