@@ -10,6 +10,7 @@ const inputDate = document.getElementById('target-date');
 const taskList = document.querySelector('.task-list')
 const tasklistdata = [];
 const taskButton = document.getElementById('myBtn');
+const cleartasks = document.getElementById('clear-tasks')
 // const formSection = document.querySelector('.form-selection');
 
 // function to add tasks to local storage
@@ -140,6 +141,7 @@ function addTask(item, tasktype, target) {
     inputTask.value = '';
     inputDate.value = '';
     inputTasktype.value = '';
+    inputTask.focus();
   }
 }
 
@@ -183,12 +185,23 @@ function rendertasklist(tasklistdata) {
 }
 
 taskList.addEventListener('click', removeTask);
-    
+
+//clear all tasks
+cleartasks.addEventListener('click', clearTasks);
 
 //remove task
 
 function removeTask(e){
 if (e.target.classList.contains('delete-button')){
+  if(confirm('are you sure')){
   e.target.parentElement.remove();
 }
 }
+}
+
+function clearTasks(){
+  if(confirm('are you sure you want to delete all tasks')){
+  taskList.innerHTML = '';
+}
+}
+
