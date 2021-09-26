@@ -5,8 +5,6 @@ const inputDate = document.getElementById('target-date');
 const taskList = document.querySelector('.task-list')
 const formSection = document.querySelector('.form-selection');
 
-let tasks 
-
 let tasks = [];
 
 function showError(input, message) {
