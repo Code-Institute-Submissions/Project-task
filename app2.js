@@ -1,13 +1,10 @@
-
-
-
 const inputTask = document.getElementById('task');
 const inputTasktype = document.getElementById('task-type');
 const inputDate = document.getElementById('target-date');
 const taskList = document.querySelector('.task-list')
 const tasklistdata = [];
-const taskButton = document.getElementById('myBtn');
-const cleartasks = document.getElementById('clear-tasks')
+const taskButton = document.getElementById('addtaskbtn');
+const cleartasks = document.getElementById('cleartasksbtn')
 const checkbox = document.getElementById('checkbox')
 
 console.log(checkbox);
@@ -118,7 +115,8 @@ function rendertasklist(tasklistdata) {
       ${item.name},
       ${item.type},
       ${item.date}
-      <button class="delete-button">X</button>
+      <button type="button" class ="btn btn-danger btn-sm float-end">X</button>
+      
     `;
     // finally add the <li> to the <ul>
     taskList.append(li);
@@ -134,7 +132,7 @@ cleartasks.addEventListener('click', clearTasks);
 //remove task
 
 function removeTask(e){
-if (e.target.classList.contains('delete-button')){
+if (e.target.classList.contains('float-end')){
   if(confirm('are you sure')){
   e.target.parentElement.remove();
 }

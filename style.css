@@ -95,7 +95,7 @@ position: relative;
     visibility: visible;
 
   }
-
+/* 
   .form button {
     cursor: pointer;
     background-color: #3498db;
@@ -107,7 +107,7 @@ position: relative;
     padding: 10px;
     margin-top: 20px;
     width: 100%;
-  }
+  } */
  
  
   .checkbox {
@@ -115,11 +115,13 @@ position: relative;
   }
 
   h5{
-      text-align: center;
+    font-size: 16px;  
+    text-align: left;
+    padding-top: 20px;
       margin: 0 0 20px;
     
   }
-    button {
+    /* button {
       cursor: pointer;
       background-color: #3498db;
       border: 2px solid #3498db;
@@ -130,13 +132,9 @@ position: relative;
       padding: 10px;
       margin-top: 20px;
       width: 100%;
-    }
+    } */
 
-    button.delete-button{
-      float: right;
-      width: 20%;
-      
-    }
+    
   
   
   
@@ -172,4 +170,4 @@ position: relative;
     font-weight: 550;
   }
   
- 
+ li{padding: 10px;}

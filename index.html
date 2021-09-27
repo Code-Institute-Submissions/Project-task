@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="alert/dist/sweetalert.css">
     <title>Project Task Tracker</title>
   </head>
@@ -42,16 +43,19 @@
           
           
         </div>
-        <button id="myBtn">Add a task</button>
-      </form>
+        
+      <button type = "button" id="addtaskbtn" class="btn btn-success">Add a task</button>
       <div>
-        <h5 id="task-title">List of Tasks</h5>
+        <h5 id="task-title">Tasks List</h5>
         <ul class = "task-list">
-         
-      </ul>
-            <button id ="clear-tasks">Clear tasks</button>
+        </ul> 
+
+      
       </div>
-    
+      <button type = "button" id ="cleartasksbtn" class = "btn btn-dark">Clear tasks</button>
+    </form>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="app2.js"></script>
     <script src="https://kit.fontawesome.com/8b6969df5b.js" crossorigin="anonymous"></script>
    

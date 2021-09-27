@@ -1,62 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet"
-         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel = "stylesheet"
-         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-      <link rel = "stylesheet" href = "style.css">
-      <script type = "text/javascript"
-         sr = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-      </script> 
-    <title>Project Tracker</title>
-           <body>
-             <div class="container">
-               <div class="row">
-                <div class="col 12">
-                  <div id="main" class="card">
-                    <div class="card-content">
-                      <span class="card-title">Task Tracker</span>
-                      <form id="task-form">  
-                          <div class="row">
-                            <div class="input-field col 6">
-                              <i class="material-icons prefix">account_circle</i>
-                              <input type="text" name="task" id="task">
-                              <span class="helper-text" data-error="wrong" data-success="right">Please enter task</span>
-                              <label for="task">New Task</label>
-                            </div>
-                          </div>
-                          <div class="row">                                                                
-                          <div class="input-field col 6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input type = "date" id = "target-date" class = "datepicker" /> 
-                            <span class="helper-text" data-error="wrong" data-success="right">Please enter target date</span>
-                          </div>
-                          </div>
-                                           
-                         
-                        <input type="submit" value="Add Task" class="btn">
-                        </form>
-                      </div>
-                    </div>
-                    <div class="card-action">
-                      <h5 id="task-title">Tasks</h5>
-                      <ul class="collection"></ul>
-                      <a href="#" class="clear-tasks btn black">Clear Tasks</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="alert/dist/sweetalert.css">
+    <title>Project Task Tracker</title>
+  </head>
   
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <body>
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="card px-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Task Planner</h4>
+                            <div class="add-items d-flex"> <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"> <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> </div>
+                            <div class="list-wrapper">
+                                <ul class="d-flex flex-column-reverse todo-list">
+                                    <li>
+                                        <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> For what reason would it be advisable. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    <li class="completed">
+                                        <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked=""> For what reason would it be advisable for me to think. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="app.js"></script>
-  </body>
-  </html>
-</html>
+  </body>  
