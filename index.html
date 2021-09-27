@@ -23,12 +23,11 @@
           <input type="text" id="task" placeholder="Enter task" />
           <small><i class="fas fa-times"></i>Error message</small>
           <span><i class="fas fa-check"></i></span>
-          
-                   
-        </div>
+    </div>
+    
         <div class="form-section">
-          <label for="Type">Type</label>
-          <input type="text" id="task-type" placeholder="Enter task type" />
+          <label for="Type">Team Member</label>
+          <input type="text" id="team-member" placeholder="Enter team member" />
           <small><i class="fas fa-times"></i>Error message</small>
           <span><i class="fas fa-check"></i></span>
           
@@ -45,6 +44,8 @@
         </div>
         
       <button type = "button" id="addtaskbtn" class="btn btn-success">Add a task</button>
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Sort
+        <span class="caret"></span></button>
       <div>
         <h5 id="task-title">Tasks List</h5>
         <table class = "table table-striped">
@@ -52,7 +53,7 @@
             <tr>
               <th scope="col">Create Date</th>
               <th scope="col">Task</th>
-              <th scope="col">Priority</th>
+              <th scope="col">Team Member</th>
               <th scope="col">Target Date</th>
             </tr>
           </thead>

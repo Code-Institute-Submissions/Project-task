@@ -1,5 +1,5 @@
 const inputTask = document.getElementById('task');
-const inputTasktype = document.getElementById('task-type');
+const inputTeammember = document.getElementById('team-member');
 const inputDate = document.getElementById('target-date');
 const taskList = document.querySelector('.task-list')
 const tasklistdata = [];
@@ -7,7 +7,9 @@ const taskButton = document.getElementById('addtaskbtn');
 const cleartasks = document.getElementById('cleartasksbtn')
 const checkbox = document.getElementById('checkbox')
 
-console.log(checkbox);
+
+
+
 // function to add tasks to local storage
 function addToLocalStorage(tasklistdata) {
   // conver the array to string then store it.
@@ -43,11 +45,11 @@ inputTask.addEventListener("blur", function(e) {
 }
  });
 
-inputTasktype.addEventListener("blur", function(e) {
-    if (inputTasktype.value === ''){
-    showError(inputTasktype,  'type is required');
+ inputTeammember.addEventListener("blur", function(e) {
+    if (inputTeammember.value === ''){
+    showError(inputTeammember,  'team member is required');
 }else {
-    showSuccess(inputTasktype);
+    showSuccess(inputTeammember);
 }
  });
 
@@ -67,25 +69,26 @@ inputDate.addEventListener("blur", function(e) {
 taskButton.addEventListener('click', function(e) {
   // prevent the page from reloading when submitting the form
   e.preventDefault();
-  addTask(inputTask.value, inputTasktype.value, inputDate.value);
+  addTask(inputTask.value, inputTeammember.value, inputDate.value);
    // call addTask function with input box current value
 });
 
 // function to add todo
-function addTask(item, tasktype, target) {
+function addTask(item, teammember, target) {
   // if item is not empty
-  if (item !== '' && tasktype !== '' && target !== '') {
+  if (item !== '' && teammember !== '' && target !== '') {
     // make a task object, which has id, name, and completed properties
     const today = new Date();
-    
+    const target = new Date(inputDate.value)
 
     const taskitem = {
       createdate: today.toDateString(),
       name: item,
-      type: tasktype,
-      date: target,
-      completed: false
+      member: teammember,
+      date: target.toDateString()
+      
     }
+    console.log(inputDate.value);
     // then add it to todos array
     tasklistdata.push(taskitem);
     addToLocalStorage(tasklistdata);
@@ -94,7 +97,7 @@ function addTask(item, tasktype, target) {
    // finally clear the input box value
     inputTask.value = '';
     inputDate.value = '';
-    inputTasktype.value = '';
+    inputTeammember.value = '';
     inputTask.focus();
   }
 else {swal("Whoops" ,  "Please complete all fields in the form!" ,  "error" );
@@ -107,17 +110,13 @@ function rendertasklist(tasklistdata) {
   taskList.innerHTML = '';
 
   // run through each item inside tasklist
-  tasklistdata.forEach(function(item, tasktype, target) {
-    // check if the item is completed
-    //const checked = item.completed ? 'checked': null;
-    // make a <li> element and fill it
-    // <li> </li>
+  tasklistdata.forEach(function(item, teammember, target) {
     const tr= document.createElement('tr');
   
     tr.innerHTML =
      `<td>${item.createdate}</td>
       <td>${item.name}</td>
-      <td>${item.type}</td>
+      <td>${item.member}</td>
       <td>${item.date}</td>
       <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
@@ -143,22 +142,13 @@ if (e.target.classList.contains('float-end')){
 }
 }
 
+
 function clearTasks(){
   if(confirm('are you sure you want to delete all tasks')){
   taskList.innerHTML = '';
 }
 }
 
-function completeTask(){
-  console.log('Hello');
-}
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'li') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
 
 
