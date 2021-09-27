@@ -75,9 +75,12 @@ taskButton.addEventListener('click', function(e) {
 function addTask(item, tasktype, target) {
   // if item is not empty
   if (item !== '' && tasktype !== '' && target !== '') {
-    // make a todo object, which has id, name, and completed properties
+    // make a task object, which has id, name, and completed properties
+    const today = new Date();
+    
+
     const taskitem = {
-      id: Date.now(),
+      createdate: today.toDateString(),
       name: item,
       type: tasktype,
       date: target,
@@ -109,17 +112,18 @@ function rendertasklist(tasklistdata) {
     //const checked = item.completed ? 'checked': null;
     // make a <li> element and fill it
     // <li> </li>
-    const li = document.createElement('li');
+    const tr= document.createElement('tr');
   
-    li.innerHTML = `
-      ${item.name},
-      ${item.type},
-      ${item.date}
-      <button type="button" class ="btn btn-danger btn-sm float-end">X</button>
+    tr.innerHTML =
+     `<td>${item.createdate}</td>
+      <td>${item.name}</td>
+      <td>${item.type}</td>
+      <td>${item.date}</td>
+      <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
     `;
     // finally add the <li> to the <ul>
-    taskList.append(li);
+    taskList.append(tr);
   });
 }
 
