@@ -106,7 +106,8 @@ function rendertasklist(tasklistdata) {
   tasklistdata.forEach(function(item, teammember, target) {
     const tr= document.createElement('tr');
       tr.innerHTML =
-      `<td><input type="checkbox" class="option-input radio"><span class="label-text"></span></label></td>
+      
+      `<td><label><input type="checkbox" id="taskcheckbox" onclick="markComplete();"></label></td>
       <td>${item.createdate}</td>
       <td>${item.name}</td>
       <td>${item.member}</td>
@@ -117,6 +118,9 @@ function rendertasklist(tasklistdata) {
     `;
     // finally add the row to the end of the table
     taskList.append(tr);
+    // const checkbox = document.getElementById('taskcheckbox')
+    // console.log(taskcheckbox);
+
   });
 }
 
@@ -143,10 +147,19 @@ function clearTasks(){
 }
 }
 
+function markComplete(){
+  
+console.log("hey this is great")
 
+}
 
-function completeTasks(){}
-
-
-//credit to https://bbbootstrap.com/snippets/bootstrap-todo-list-custom-checkbox-button-ripple-effect-83884173
+// function calc()
+// {
+//   if (document.getElementById('xxx').checked) 
+//   {
+//       document.getElementById('totalCost').value = 10;
+//   } else {
+//       calculate();
+//   }
+// }
 

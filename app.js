@@ -100,14 +100,14 @@ function rendertasklist(tasklistdata) {
     const tr= document.createElement('tr');
   
     tr.innerHTML =
-     `<td><label><input type="checkbox" class="option-input radio"><span class="label-text"></span></label></td>
+     `<td><label><input type="checkbox" id="xxx"></label></td>
      <td>${item.createdate}</td> 
      <td>${item.name}</td>
       <td>${item.member}</td>
       <td>${item.date}</td>
       <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
-    `;
+  `;
     // finally add the <li> to the <ul>
     taskList.append(tr);
   });
