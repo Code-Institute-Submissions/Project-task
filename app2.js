@@ -145,17 +145,8 @@ function clearTasks(){
 
 
 
+function completeTasks(){}
+
 
 //credit to https://bbbootstrap.com/snippets/bootstrap-todo-list-custom-checkbox-button-ripple-effect-83884173
 
-$(document).ready(function() {
-  $('input[type=checkbox]').change(function() {
-  
-  if (this.checked) {
-  $(this).next(".label-text").css("text-decoration-line", "line-through");
-  } else {
-  $(this).next(".label-text").css("text-decoration-line", "none");
-  }
-  
-  });
-  });
