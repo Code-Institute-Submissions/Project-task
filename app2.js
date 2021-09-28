@@ -8,6 +8,7 @@ const cleartasks = document.getElementById('cleartasksbtn')
 const checkbox = document.getElementById('checkbox')
 
 
+
 function showError(input, message) {
     const formSection = input.parentElement;
     formSection.className = 'form-section error';
