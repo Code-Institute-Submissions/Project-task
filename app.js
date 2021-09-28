@@ -9,19 +9,17 @@ const cleartasks = document.getElementById('cleartasksbtn');
 
 // Show error message
 function showError(input, message) {
-    const formInput = input.parentElement;
-    document.getElementById('formInput').style.border = "thick solid #e74c3c";
-    const small = document.querySelector('small');
-    small.style.visibility = 'visible';
+    const formInput = input;
+    formInput.style.border = "thick solid #e74c3c";
+    const small = formInput.querySelector('small');
+    small.innerText = message;
      }   
-
   // Show success outline
 function showSuccess(input) {
     // const formSection = input.parentElement;
     // formSection.className = 'form-section success';
-    document.getElementById("task").style.border = "thick solid #2ecc71";
-    const small = document.querySelector('small');
-    small.style.visibility = 'hidden';
+    const formInput = input;
+    formInput.style.border = "thick solid #2ecc71";    
   }
 
 // Event Listeners
@@ -80,13 +78,14 @@ function addTask(item, teammember, target) {
     tasklistdata.push(taskitem);
     
  rendertasklist(tasklistdata); // then renders them between <ul>
-
+ 
    // finally clear the input box value
     inputTask.value = '';
     inputDate.value = '';
     inputTeammember.value = '';
     inputTask.focus();
-  }
+    
+}
 else {swal("Whoops" ,  "Please complete all fields in the form!" ,  "error" );
 }
 }

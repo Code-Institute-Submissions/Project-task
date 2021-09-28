@@ -84,6 +84,13 @@ function addTask(item, teammember, target) {
     inputDate.value = '';
     inputTeammember.value = '';
     inputTask.focus();
+    
+    const tick = document.getElementById('check');
+    
+    console.log(tick);
+    
+    
+
   }
 else {swal("Whoops" ,  "Please complete all fields in the form!" ,  "error" );
 }

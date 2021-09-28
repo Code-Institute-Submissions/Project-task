@@ -15,21 +15,20 @@
   <body>
 
     <div class="container">
-      <i id="toggle"></i>
       <form id="form" class="form">
         <h2>Project Task Tracker</h2>
         <div class="form-section">
           <label for="Task">Task</label>
           <input type="text" id="task" placeholder="Enter task" />
           <small><i class="fas fa-times"></i>Error message</small>
-          <span><i class="fas fa-check"></i></span>
+          <span><i class="fas fa-check" id = "check"></i></span>
     </div>
     
         <div class="form-section">
           <label for="Type">Team Member</label>
           <input type="text" id="team-member" placeholder="Enter team member" />
           <small><i class="fas fa-times"></i>Error message</small>
-          <span><i class="fas fa-check"></i></span>
+          <span id = "check"><i class="fas fa-check" id = "check"></i></span>
           
           
         </div>
@@ -37,15 +36,14 @@
           <label for="target-date">Target Date</label>
           <input type="date" id="target-date" placeholder="Enter target date" />
           <small><i class="fas fa-times"></i>Error message</small>
-          <span><i class="fas fa-check"></i></span>
+          <span><i class="fas fa-check" id = "check"></i></span>
            
           
           
         </div>
         
       <button type = "button" id="addtaskbtn" class="btn btn-success">Add a task</button>
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Sort
-        <span class="caret"></span></button>
+      
       <div>
         <h5 id="task-title">Tasks List</h5>
         <table class = "table table-striped">
@@ -71,7 +69,7 @@
     </form>
       
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script src="app2.js"></script>
     <script src="https://kit.fontawesome.com/8b6969df5b.js" crossorigin="anonymous"></script>
    
   </body>
