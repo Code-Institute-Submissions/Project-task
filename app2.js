@@ -8,20 +8,6 @@ const cleartasks = document.getElementById('cleartasksbtn')
 const checkbox = document.getElementById('checkbox')
 
 
-
-
-// function to add tasks to local storage
-function addToLocalStorage(tasklistdata) {
-  // conver the array to string then store it.
-  localStorage.setItem('tasklist', JSON.stringify(tasklistdata));
-  // render them to screen
-  rendertasklist(tasklistdata);
-}
-
-
-
-let tasks = [];
-
 function showError(input, message) {
     const formSection = input.parentElement;
     formSection.className = 'form-section error';
@@ -63,8 +49,6 @@ inputDate.addEventListener("blur", function(e) {
 
 
 
-
-
 // add an eventListener on form, and listen for submit event
 taskButton.addEventListener('click', function(e) {
   // prevent the page from reloading when submitting the form
@@ -89,9 +73,9 @@ function addTask(item, teammember, target) {
       
     }
     console.log(inputDate.value);
-    // then add it to todos array
+    // then add it to task array
     tasklistdata.push(taskitem);
-    addToLocalStorage(tasklistdata);
+    
  rendertasklist(tasklistdata); // then renders them between <ul>
 
    // finally clear the input box value
