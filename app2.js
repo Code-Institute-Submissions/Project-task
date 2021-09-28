@@ -1,13 +1,13 @@
-const inputTask = document.getElementById('task');
-const inputTeammember = document.getElementById('team-member');
-const inputDate = document.getElementById('target-date');
-const taskList = document.querySelector('.task-list')
-const tasklistdata = [];
-const taskButton = document.getElementById('addtaskbtn');
-const cleartasks = document.getElementById('cleartasksbtn')
-const checkbox = document.getElementById('checkbox')
+const tasklistdata = [];  //that will hold all the value of task list
+const inputTask = document.getElementById('task'); //first input field 
+const inputTeammember = document.getElementById('team-member'); //2nd input field
+const inputDate = document.getElementById('target-date'); //3rd input field which is that target date for the task
+const taskList = document.querySelector('.task-list');// tasks will be appended inside the tasklist table
+const taskButton = document.getElementById('addtaskbtn');  // button that will add task record to the task list
+const cleartasks = document.getElementById('cleartasksbtn') //button that will delete all task deleted
 
 
+//function to show error when no information is inputted into field
 
 function showError(input, message) {
     const formSection = input.parentElement;
@@ -16,13 +16,13 @@ function showError(input, message) {
     small.innerText = message;
  }   
 
-  // Show success outline
+// Show success that add classname success which add a greenborder and a tick
 function showSuccess(input) {
     const formSection = input.parentElement;
     formSection.className = 'form-section success';
   }
 
-// Event Listeners
+// Event Listeners that intialise error or success functions when user moves away task field
 inputTask.addEventListener("blur", function(e) {
     if (inputTask.value === ''){
     showError(inputTask,  'task is required');
@@ -32,6 +32,7 @@ inputTask.addEventListener("blur", function(e) {
 }
  });
 
+ // Event Listeners that intialise error or success functions when user moves away team member field
  inputTeammember.addEventListener("blur", function(e) {
     if (inputTeammember.value === ''){
     showError(inputTeammember,  'team member is required');
@@ -39,6 +40,8 @@ inputTask.addEventListener("blur", function(e) {
     showSuccess(inputTeammember);
 }
  });
+
+ // Event Listeners that intialise error or success functions when user moves away from data input field
 
 inputDate.addEventListener("blur", function(e) {
     if (inputDate.value === ''){
@@ -48,19 +51,17 @@ inputDate.addEventListener("blur", function(e) {
 }
  });
 
-
-
-// add an eventListener on form, and listen for submit event
+// add an eventListener on form, and listen to the add task event
 taskButton.addEventListener('click', function(e) {
-  // prevent the page from reloading when submitting the form
+  // stops the page from reloading when submitting the form
   e.preventDefault();
   addTask(inputTask.value, inputTeammember.value, inputDate.value);
-   // call addTask function with input box current value
+   // call addTask function with add results from 3 fields
 });
 
-// function to add todo
+// function to addtask
 function addTask(item, teammember, target) {
-  // if item is not empty
+  // if fields are not empty
   if (item !== '' && teammember !== '' && target !== '') {
     // make a task object, which has id, name, and completed properties
     const today = new Date();
@@ -96,32 +97,33 @@ else {swal("Whoops" ,  "Please complete all fields in the form!" ,  "error" );
 }
 }
 
-// function to render given tasks to screen
+// function to add given tasks to table
 function rendertasklist(tasklistdata) {
-  // clear everything inside <ul> with class=todo-items
+  // clear everything inside table list
   taskList.innerHTML = '';
 
-  // run through each item inside tasklist
+  // run through each item inside tasklist and add a new row
   tasklistdata.forEach(function(item, teammember, target) {
     const tr= document.createElement('tr');
-  
-    tr.innerHTML =
-     `<td>${item.createdate}</td>
+      tr.innerHTML =
+      `<td><input type="checkbox" class="option-input radio"><span class="label-text"></span></label></td>
+      <td>${item.createdate}</td>
       <td>${item.name}</td>
       <td>${item.member}</td>
       <td>${item.date}</td>
+      
       <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
     `;
-    // finally add the <li> to the <ul>
+    // finally add the row to the end of the table
     taskList.append(tr);
   });
 }
 
-//remove tasks
+//remove tasks listener on button click
 taskList.addEventListener('click', removeTask);
 
-//clear all tasks
+//clear all tasks listener on button click
 cleartasks.addEventListener('click', clearTasks);
 
 //remove task
@@ -144,3 +146,16 @@ function clearTasks(){
 
 
 
+//credit to https://bbbootstrap.com/snippets/bootstrap-todo-list-custom-checkbox-button-ripple-effect-83884173
+
+$(document).ready(function() {
+  $('input[type=checkbox]').change(function() {
+  
+  if (this.checked) {
+  $(this).next(".label-text").css("text-decoration-line", "line-through");
+  } else {
+  $(this).next(".label-text").css("text-decoration-line", "none");
+  }
+  
+  });
+  });
