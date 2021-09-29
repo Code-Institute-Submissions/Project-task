@@ -170,4 +170,5 @@ position: relative;
     font-weight: 550;
   }
   
- li{padding: 10px;}
+ 
+tr span {background-color: #dc143c;}  

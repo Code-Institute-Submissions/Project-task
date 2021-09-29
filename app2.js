@@ -108,10 +108,10 @@ function rendertasklist(tasklistdata) {
       tr.innerHTML =
       
       `<td><label><input type="checkbox" id="taskcheckbox" onclick="markComplete();"></label></td>
-      <td>${item.createdate}</td>
+      <span><td>${item.createdate}</td>
       <td>${item.name}</td>
       <td>${item.member}</td>
-      <td>${item.date}</td>
+      <td>${item.date}</td></span>
       
       <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
@@ -148,18 +148,13 @@ function clearTasks(){
 }
 
 function markComplete(){
-  
-console.log("hey this is great")
+const checkBox = document.getElementById('taskcheckbox');
+console.log(checkBox);
+  if (checkBox.checked == true){
+    console.log("block");
+   } else {
+     console.log("none");
+  }
+
 
 }
-
-// function calc()
-// {
-//   if (document.getElementById('xxx').checked) 
-//   {
-//       document.getElementById('totalCost').value = 10;
-//   } else {
-//       calculate();
-//   }
-// }
-
