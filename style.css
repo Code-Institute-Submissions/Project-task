@@ -8,6 +8,7 @@
 
 *{
     box-sizing: border-box;
+    ;
 }
 
 body{
@@ -95,24 +96,7 @@ position: relative;
     visibility: visible;
 
   }
-/* 
-  .form button {
-    cursor: pointer;
-    background-color: #3498db;
-    border: 2px solid #3498db;
-    border-radius: 4px;
-    color: #fff;
-    display: block;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 100%;
-  } */
  
- 
-  .checkbox {
-    margin-right: 10px;
-  }
 
   h5{
     font-size: 16px;  
@@ -121,42 +105,8 @@ position: relative;
       margin: 0 0 20px;
     
   }
-    /* button {
-      cursor: pointer;
-      background-color: #3498db;
-      border: 2px solid #3498db;
-      border-radius: 4px;
-      color: #fff;
-      display: block;
-      font-size: 16px;
-      padding: 10px;
-      margin-top: 20px;
-      width: 100%;
-    } */
-
-    
   
-  
-  
-  
-
-  .item {
-    background-color: #fff;
-    padding: 10px;
-    font-size: 1.1rem;
-  }
-  
-  .item:first-child {
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-  }
-  
-  .item:last-child {
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-  }
-  
-  /* item style end */
+ 
   
   .delete-button {
     float: right;
@@ -171,4 +121,6 @@ position: relative;
   }
   
  
-tbody.task-list {background-color: #dc143c;}  
+tbody.task-list {text-decoration: line-through;}  
+
+
