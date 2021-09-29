@@ -171,4 +171,4 @@ position: relative;
   }
   
  
-tr span {background-color: #dc143c;}  
+tbody.task-list {background-color: #dc143c;}  

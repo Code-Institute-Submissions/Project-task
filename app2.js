@@ -108,10 +108,10 @@ function rendertasklist(tasklistdata) {
       tr.innerHTML =
       
       `<td><label><input type="checkbox" id="taskcheckbox" onclick="markComplete();"></label></td>
-      <span><td>${item.createdate}</td>
+      <td>${item.createdate}</td>
       <td>${item.name}</td>
       <td>${item.member}</td>
-      <td>${item.date}</td></span>
+      <td>${item.date}</td>
       
       <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
