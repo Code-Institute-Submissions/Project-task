@@ -5,7 +5,7 @@ const inputDate = document.getElementById('target-date'); //3rd input field whic
 const taskList = document.querySelector('.task-list');// tasks will be appended inside the tasklist table
 const taskButton = document.getElementById('addtaskbtn');  // button that will add task record to the task list
 const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
-const taskclass = document.getElementById('form-section');
+const taskclass = document.getElementsByClassName('form-section');
 
 console.log(taskclass);
 //function to show error and add red border when no information is inputted into field
@@ -86,8 +86,8 @@ function addTask(item, teammember, target) {
     inputDate.value = '';
     inputTeammember.value = '';
     inputTask.focus();
-    taskclass.classList.remove("success");
-    //removeClasses();
+    //taskclass.classList.remove("success");
+    removeClasses();
 
    
   
@@ -161,7 +161,7 @@ console.log(checkBox);
 
 
 function removeClasses() {
-  for (var i = 0; i < els.length; i++) {
+  for (var i = 0; i < taskclass.length; i++) {
     taskclass[i].classList.remove('success')
   }
 }
