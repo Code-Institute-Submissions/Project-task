@@ -4,9 +4,10 @@ const inputTeammember = document.getElementById('team-member'); //2nd input fiel
 const inputDate = document.getElementById('target-date'); //3rd input field which is that target date for the task
 const taskList = document.querySelector('.task-list');// tasks will be appended inside the tasklist table
 const taskButton = document.getElementById('addtaskbtn');  // button that will add task record to the task list
-const cleartasks = document.getElementById('cleartasksbtn') //button that will delete all task deleted
+const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
+const taskclass = document.getElementById('form-section');
 
-
+console.log(taskclass);
 //function to show error and add red border when no information is inputted into field
 
 function showError(input, message) {
@@ -85,6 +86,9 @@ function addTask(item, teammember, target) {
     inputDate.value = '';
     inputTeammember.value = '';
     inputTask.focus();
+    taskclass.classList.remove("success");
+    //removeClasses();
+
    
   
   }
@@ -152,4 +156,12 @@ console.log(checkBox);
   }
 
 
+}
+
+
+
+function removeClasses() {
+  for (var i = 0; i < els.length; i++) {
+    taskclass[i].classList.remove('success')
+  }
 }

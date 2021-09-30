@@ -13,18 +13,17 @@
   </head>
   <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
   <body>
-
     <div class="container">
       <form id="form" class="form">
         <h2>Project Task Tracker</h2>
-        <div class="form-section">
+        <div class="form-section" id = "form-section">
           <label for="Task">Task</label>
           <input type="text" id="task" placeholder="Enter task" />
           <small><i class="fas fa-times"></i>Error message</small>
           <span><i class="fas fa-check" id = "check"></i></span>
     </div>
     
-        <div class="form-section">
+        <div class="form-section" id = "form-section">
           <label for="Type">Team Member</label>
           <input type="text" id="team-member" placeholder="Enter team member" />
           <small><i class="fas fa-times"></i>Error message</small>
@@ -32,7 +31,7 @@
           
           
         </div>
-        <div class="form-section">
+        <div class="form-section" id = "form-section">
           <label for="target-date">Target Date</label>
           <input type="date" id="target-date" placeholder="Enter target date" />
           <small><i class="fas fa-times"></i>Error message</small>
@@ -53,8 +52,6 @@
             </tr>
           </thead>
           <tbody class ="task-list">
-
-
           </tbody>
         </table> 
       
