@@ -6,6 +6,9 @@ const taskList = document.querySelector('.task-list');// tasks will be appended 
 const taskButton = document.getElementById('addtaskbtn');  // button that will add task record to the task list
 const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
 const taskclass = document.getElementsByClassName('form-section');
+const checkBox = document.getElementById("taskcheckbox");
+
+document.getElementById("taskcheckbox").checked = false;
 
 console.log(taskclass);
 //function to show error and add red border when no information is inputted into field
@@ -25,7 +28,7 @@ function showSuccess(input) {
 
 // Event Listeners that intialise error or success functions when user moves away task field
 inputTask.addEventListener("blur", function(e) {
-    if (inputTask.value === ''){
+    if (inputTask.value === '') {
     showError(inputTask,  'task is required');
 
 }else {
@@ -88,6 +91,7 @@ function addTask(item, teammember, target) {
     inputTask.focus();
     //taskclass.classList.remove("success");
     removeClasses();
+    
 
    
   
@@ -146,22 +150,13 @@ function clearTasks(){
 }
 }
 
-function markComplete(){
-const checkBox = document.getElementById('taskcheckbox');
-console.log(checkBox);
-  if (checkBox.checked == true){
-    console.log("this is great")
-   } else {
-     console.log("no line through");
-  }
-
-
-}
-
-
-
 function removeClasses() {
   for (var i = 0; i < taskclass.length; i++) {
     taskclass[i].classList.remove('success')
   }
 }
+
+
+
+
+

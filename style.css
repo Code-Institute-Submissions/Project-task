@@ -120,7 +120,6 @@ position: relative;
     font-weight: 550;
   }
   
- 
-tbody.task-list {text-decoration: line-through;}  
+ .strikethrough {text-decoration: line-through;}  
 
 
