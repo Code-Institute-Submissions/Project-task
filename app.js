@@ -8,9 +8,6 @@ const cleartasks = document.getElementById('cleartasksbtn'); //button that will 
 const taskclass = document.getElementsByClassName('form-section');
 const checkBox = document.getElementById("taskcheckbox");
 
-document.getElementById("taskcheckbox").checked = false;
-
-console.log(taskclass);
 //function to show error and add red border when no information is inputted into field
 
 function showError(input, message) {
@@ -110,13 +107,13 @@ function rendertasklist(tasklistdata) {
     const tr= document.createElement('tr');
       tr.innerHTML =
       
-      `<td><label><input type="checkbox" id="taskcheckbox" onclick="markComplete();"></label></td>
-      <td>${item.createdate}</td>
+      `<td><input type="checkbox" id="taskcheckbox"</td>
+      
       <td>${item.name}</td>
       <td>${item.member}</td>
-      <td>${item.date}</td>
+      <td>${item.date}
       
-      <td><button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
+      <button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
     `;
     // finally add the row to the end of the table
