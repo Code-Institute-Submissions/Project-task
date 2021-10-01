@@ -120,7 +120,4 @@ position: relative;
     font-weight: 550;
   }
   
- .strikethrough {text-decoration: line-through;}  
-
-
-tr {border-style: solid;}
+.strikethrough {text-decoration: line-through;}  

@@ -6,7 +6,9 @@ const taskList = document.querySelector('.task-list');// tasks will be appended 
 const taskButton = document.getElementById('addtaskbtn');  // button that will add task record to the task list
 const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
 const taskclass = document.getElementsByClassName('form-section');
-const checkBox = document.getElementById("taskcheckbox");
+
+
+
 
 //function to show error and add red border when no information is inputted into field
 
@@ -86,10 +88,9 @@ function addTask(item, teammember, target) {
     inputDate.value = '';
     inputTeammember.value = '';
     inputTask.focus();
-    //taskclass.classList.remove("success");
     removeClasses();
     
-
+    console.log(taskList);
    
   
   }
@@ -107,8 +108,8 @@ function rendertasklist(tasklistdata) {
     const tr= document.createElement('tr');
       tr.innerHTML =
       
-      `<td class ="col-xs-1"><input type="checkbox" id="taskcheckbox"</td>
-        <td class = "col-xs-5">${item.name}</td>
+      `<td class ="col-xs-1"><input type="checkbox" class ="checkbox" id="taskcheckbox"</td>
+      <td class = "col-xs-5">${item.name}</td>
       <td class = "col-xs-3">${item.member}</td>
       <td class = "col-xs-3">${item.date}
       
@@ -123,6 +124,10 @@ function rendertasklist(tasklistdata) {
   });
 }
 
+//complete task listener on checkbox click
+// const checkBox = document.getElementById("taskcheckbox");
+// checkBox.addEventListener('click', completeTask);
+
 //remove tasks listener on button click
 taskList.addEventListener('click', removeTask);
 
@@ -133,10 +138,17 @@ cleartasks.addEventListener('click', clearTasks);
 
 function removeTask(e){
 if (e.target.classList.contains('float-end')){
-  if(confirm('are you sure')){
-  e.target.parentElement.remove();
+  
+  e.target.parentElement.parentElement.remove();
+}else(e.target.classList.contains('checkbox'));{
+  e.target.parentElement.parentElement.className ='strikethrough';}
 }
-}
+
+
+function completeTask(e){
+  if (e.target.classList.contains('checkbox')){
+    e.target.parentElement.classList.toggle('strikethrough');
+  }
 }
 
 
