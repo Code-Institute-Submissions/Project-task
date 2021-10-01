@@ -107,11 +107,10 @@ function rendertasklist(tasklistdata) {
     const tr= document.createElement('tr');
       tr.innerHTML =
       
-      `<td><input type="checkbox" id="taskcheckbox"</td>
-      
-      <td>${item.name}</td>
-      <td>${item.member}</td>
-      <td>${item.date}
+      `<td class ="col-xs-1"><input type="checkbox" id="taskcheckbox"</td>
+        <td class = "col-xs-5">${item.name}</td>
+      <td class = "col-xs-3">${item.member}</td>
+      <td class = "col-xs-3">${item.date}
       
       <button type="button" class ="btn btn-danger btn-sm float-end">X</button></td>
       
