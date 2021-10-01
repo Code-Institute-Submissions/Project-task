@@ -4,7 +4,6 @@ const inputTeammember = document.getElementById('team-member'); //2nd input fiel
 const inputDate = document.getElementById('target-date'); //3rd input field which is that target date for the task
 const taskList = document.querySelector('.task-list');// tasks will be appended inside the tasklist table
 const taskButton = document.getElementById('addtaskbtn');  // button that will add task record to the task list
-const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
 const taskclass = document.getElementsByClassName('form-section');
 
 
@@ -108,7 +107,7 @@ function rendertasklist(tasklistdata) {
     const tr= document.createElement('tr');
       tr.innerHTML =
       
-      `<td class ="col-xs-1"><input type="checkbox" class ="checkbox" id="taskcheckbox"</td>
+      `<td class ="col-xs-1"><input type="checkbox" class ="checkbox" id="taskcheckbox" onclick="myFunction()"</td>
       <td class = "col-xs-5">${item.name}</td>
       <td class = "col-xs-3">${item.member}</td>
       <td class = "col-xs-3">${item.date}
@@ -124,51 +123,35 @@ function rendertasklist(tasklistdata) {
   });
 }
 
-//complete task listener on checkbox click
-// const checkBox = document.getElementById("taskcheckbox");
-// checkBox.addEventListener('click', completeTask);
 
-taskList.addEventListener('click', removeCheck);
+//taskList.addEventListener('click', removeCheck);
 
 //remove tasks listener on button click
 taskList.addEventListener('click', removeTask);
 
 //clear all tasks listener on button click
+const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
 cleartasks.addEventListener('click', clearTasks);
-
-//remove task
-
-function removeTask(e){
-if (e.target.classList.contains('float-end')){
-
-  e.target.parentElement.parentElement.remove();
-}
-else(e.target.classList.contains('checkbox'));{
-  e.target.parentElement.parentElement.className ='strikethrough';}
-}
-
-function removeCheck(e){
-  const checkBox = document.getElementById('taskcheckbox');
-  checkBox.addEventListener('click',e);{
-  if (e.target.parentElement.classList.contains('strikethrough'));
-  {e.target.parentElement.className ='nostrikethrough';
-  }
-}
-}
-// function completeTask(e){
-//   if (e.target.classList.contains('checkbox')){
-//     e.target.parentElement.classList.toggle('strikethrough');
-//   }
-// }
-
-
 function clearTasks(){
   if(confirm('are you sure you want to delete all tasks')){
   taskList.innerHTML = '';
 }
 }
 
-function removeClasses() {
+
+//remove task
+
+function myFunction(){
+  const checkBox = document.getElementById('taskcheckbox');
+  checkBox.parentElement.parentElement.classList.toggle("strikethrough");
+}
+
+function removeTask(e){
+ if (e.target.classList.contains('float-end')){
+
+  e.target.parentElement.parentElement.remove();
+ }
+ function removeClasses() {
   for (var i = 0; i < taskclass.length; i++) {
     taskclass[i].classList.remove('success')
   }
@@ -177,4 +160,4 @@ function removeClasses() {
 
 
 
-
+}

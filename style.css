@@ -11,6 +11,12 @@
     ;
 }
 
+.strikethrough {
+  text-decoration:line-through;
+  color:#2ecc71;
+}
+
+
 body{
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
@@ -120,12 +126,4 @@ position: relative;
     font-weight: 550;
   }
   
-  .strikethrough {
-    text-decoration:line-through;
-    color:#2ecc71;
-  }
-
-  .no-strikethrough {
-
-    text-decoration: none;
-}
+  
