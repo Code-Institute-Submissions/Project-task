@@ -128,6 +128,8 @@ function rendertasklist(tasklistdata) {
 // const checkBox = document.getElementById("taskcheckbox");
 // checkBox.addEventListener('click', completeTask);
 
+taskList.addEventListener('click', removeCheck);
+
 //remove tasks listener on button click
 taskList.addEventListener('click', removeTask);
 
@@ -138,18 +140,26 @@ cleartasks.addEventListener('click', clearTasks);
 
 function removeTask(e){
 if (e.target.classList.contains('float-end')){
-  
+
   e.target.parentElement.parentElement.remove();
-}else(e.target.classList.contains('checkbox'));{
+}
+else(e.target.classList.contains('checkbox'));{
   e.target.parentElement.parentElement.className ='strikethrough';}
 }
 
-
-function completeTask(e){
-  if (e.target.classList.contains('checkbox')){
-    e.target.parentElement.classList.toggle('strikethrough');
+function removeCheck(e){
+  const checkBox = document.getElementById('taskcheckbox');
+  checkBox.addEventListener('click',e);{
+  if (e.target.parentElement.classList.contains('strikethrough'));
+  {e.target.parentElement.className ='nostrikethrough';
   }
 }
+}
+// function completeTask(e){
+//   if (e.target.classList.contains('checkbox')){
+//     e.target.parentElement.classList.toggle('strikethrough');
+//   }
+// }
 
 
 function clearTasks(){
