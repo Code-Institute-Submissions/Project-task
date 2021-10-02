@@ -86,10 +86,9 @@ function addTask(item, teammember, target) {
     inputTask.value = '';
     inputDate.value = '';
     inputTeammember.value = '';
-    inputTask.focus();
-    removeClasses();
+    // inputTask.focus();
     
-    console.log(taskList);
+    
    
   
   }
@@ -151,6 +150,7 @@ function removeTask(e){
 
   e.target.parentElement.parentElement.remove();
  }
+
  function removeClasses() {
   for (var i = 0; i < taskclass.length; i++) {
     taskclass[i].classList.remove('success')
