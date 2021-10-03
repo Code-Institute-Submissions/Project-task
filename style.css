@@ -13,7 +13,11 @@
 
 .strikethrough {
   text-decoration:line-through;
-  color:#2ecc71;
+  background-color:#2ecc71;
+}
+
+.check-box {
+  font-size: 18px;
 }
 
 
