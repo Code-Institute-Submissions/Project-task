@@ -106,7 +106,7 @@ function rendertasklist(taskListdata) {
     const tr= document.createElement('tr');
       tr.innerHTML = 
       `<td class = "col-xs-3" style = "display:None">${item.raw_date}</td>  
-      <td class ="col-xs-1"><input type="checkbox" style = "margin-left:15%" class ="checkbox" id="taskcheckbox" onclick="completeTask()"</td>
+      <td class ="col-xs-1"><input type="checkbox" style = "margin-left:15%" class ="checkbox" id="taskcheckbox" onclick="myFunction()"</td>
       <td class = "col-xs-7">${item.name}</td>
       <td class = "col-xs-2"style = "padding-left:15%" >${item.member}</td>
       <td class = "col-xs-2">${item.date}
@@ -133,22 +133,14 @@ function removeTask(e){
   }
    e.target.parentElement.parentElement.remove();
   }
- 
- 
-
-
-
-
-
-
-
+}
 //*****************toggle between complete and uncomplete strikethrough********************
 
-function completeTask(){
+function myFunction(){
   const checkBox = document.getElementById('taskcheckbox');
   checkBox.parentElement.parentElement.classList.toggle("strikethrough");
 }
-}
+
 
 //*******************/ function to Sort date by Target date*****************
  function convertDate(d){
