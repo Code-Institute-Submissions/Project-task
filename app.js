@@ -7,9 +7,8 @@ const taskButton = document.getElementById('addtaskbtn');  // button that will a
 const cleartasks = document.getElementById('cleartasksbtn');
 const sortbtn = document.getElementById('sortbtn');
 
-//******credits go to Brad Travesy at Vanilla project particularly the form validator project//
-
-//******function to show error and add red border when no information is inputted into field****
+//******credits go to Brad Travesy and online teacher whose ideas and approach inspired my project particular his  Vanilla project online course and form validator project//
+//******function to show error and add red border when no information is inputted into field from Brad Travesy Form validation****
 
 function showError(input, message) {
     const formSection = input.parentElement;
@@ -118,22 +117,23 @@ function rendertasklist(taskListdata) {
 }
 
 //remove tasks listener on button click
+//credit to Sardar Dawar for this one.
+
 taskList.addEventListener('click', removeTask);
 
 function removeTask(e){
   if (e.target.classList.contains('float-end')){
   value = e.target.parentElement.previousElementSibling.innerText
-  console.log(value)
-  for (i in taskListdata){
+    for (i in taskListdata){
     if (value == taskListdata[i].member){
-      console.log("found it")
-      taskListdata.splice(i,1)
+        taskListdata.splice(i,1)
     }
   }
    e.target.parentElement.parentElement.remove();
   }
 }
-//*****************toggle between complete and uncomplete strikethrough********************
+//*****************toggle between complete and uncomplete strikethrough*******************//*
+//credit goes to Thanh Skustad from Github who helped with this one:??
 
 function completeTask(){
   const checkBox = document.getElementById('taskcheckbox');
