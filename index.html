@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="alert/dist/sweetalert.css">
+    <title>Project Task Tracker</title>
+  </head>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
+  <body>
+    <div class="container">
+      <form>
+        <h2>Project Task Tracker</h2>
+        <div class="form-section" id = "form-section">
+          <label for="Task">Task</label>
+          <input type="text" id="task" placeholder="Enter task" />
+          <small><i class="fas fa-times"></i>Error message</small>
+          <span><i class="fas fa-check"></i></span>
+    </div>
+    
+        <div class="form-section" id = "form-section">
+          <label for="Type">Team Member</label>
+          <input type="text" id="team-member" placeholder="Enter team member" />
+          <small><i class="fas fa-times"></i>Error message</small>
+          <span><i class="fas fa-check"></i></span>
+          
+          
+        </div>
+        <div class="form-section" id = "form-section">
+          <label for="target-date">Target Date</label>
+          <input type="date" id="target-date" placeholder="Enter target date" />
+          <small><i class="fas fa-times"></i>Error message</small>
+          <span><i class="fas fa-check"></i></span>
+        </div>
+        
+        <button type = "button" id="addtaskbtn" class="btn btn-success">Add a task</button>
+        <div>
+        <h5 id="task-title">Tasks List</h5>
+        <button type = "button" id="sortbtn" class="btn btn-success">Sort by Target Date</button>
+        <table class = "table table-striped" id="tasklist">
+          <thead>
+            <tr>
+              <th class="col-xs-1">Complete</th>
+              <th class="col-xs-7">Task</th>
+              <th class="col-xs-2" style = padding-left:15%>Team Member</th>
+              <th class="col-xs-2">Target Date</th>
+            </tr>
+          </thead>
+          <tbody class ="task-list">
+          </tbody>
+        </table> 
+      
+      </div>
+      <button type = "button" id ="cleartasksbtn" class = "btn btn-dark">Clear tasks</button>
+    </form>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="app1.js"></script>
+    <script src="https://kit.fontawesome.com/8b6969df5b.js" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+   
+  </body>
+</html>
+
