@@ -1,12 +1,30 @@
 # Project-task
 Objective of the Project
 
-The purpose was to build basic task list. A user of app can add a task,  delete an already added task and clear all the task on the list. 
-The user wil only be able to add a record if all the fields are completed. The task will added as a row at the end of the table.
+The purpose was to build simple task list with the following functionality:
 
-Tasks:
+1) A user of app can add a task and assign a team member and target date.  
+
+2) A user will be able to delete a task
+
+3) A user will be able to clear all tasks
+
+4) A user will only be able to add tasks when all fields have been completed.
+
+5) A user will be able to sort the lists by team member, task and target date.
+
+What I did:
+
+1) Created the UI using Html and CSS
+
+2) Created the following event listeners on the form:
+
+3) Created 
+    
+
 
 1) Create an array that will hold all the values of the table. 
 
-2) The first thing we need to do is set up an array where we’ll place the todo list items. Each todo item will be an object with three properties: text, a string which holds whatever the user types into the text input, checked, a boolean which helps us know if a task has been marked completed or not, and id, a unique identifier for the item.
+2) Each task item (task item, team member and target date) will be an object with three properties: 
 
+3)  
