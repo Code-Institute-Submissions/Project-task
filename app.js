@@ -116,11 +116,19 @@ function rendertasklist(taskListdata) {
   });
 }
 
-
 //remove tasks listener on button click
 taskList.addEventListener('click', removeTask);
 
-//clear all tasks listener on button click
+function removeTask(e){
+  if (e.target.classList.contains('float-end')){
+ 
+   e.target.parentElement.parentElement.remove();
+  }
+ 
+ 
+
+
+//clear all tasks on button click
 const cleartasks = document.getElementById('cleartasksbtn'); //button that will delete all task deleted
 cleartasks.addEventListener('click', clearTasks);
 function clearTasks(){
@@ -136,12 +144,6 @@ function completeTask(){
   const checkBox = document.getElementById('taskcheckbox');
   checkBox.parentElement.parentElement.classList.toggle("strikethrough");
 }
-
-function removeTask(e){
- if (e.target.classList.contains('float-end')){
-
-  e.target.parentElement.parentElement.remove();
- }
 
 
  //not working - remove success class on form-section class
